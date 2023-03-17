@@ -23,9 +23,6 @@ public class FView: ChildrenDTOAble {
         self.id = children.id
         self.name = children.name
         self.scrollBehavior = children.scrollBehavior
-        if self.name == "Frame 1" {
-            print(11)
-        }
         if let absolutePostition = children.absoluteBoundingBox {
             var absoluteX = absolutePostition.x - offset.x
             var absoluteY = absolutePostition.y - offset.y

@@ -45,13 +45,15 @@ public class FView: ChildrenDTOAble {
             case "FRAME":
                 return FFrame(children: node, offset: offset)
             case "RECTANGLE":
-                return FFrame(children: node, offset: offset)
+                return FVector(children: node, offset: offset)
             case "VECTOR":
-                return FFrame(children: node, offset: offset)
+                return FVector(children: node, offset: offset)
             case "TEXT":
                 return FFrame(children: node, offset: offset)
             case "LINE":
-                return FFrame(children: node, offset: offset)
+                return FVector(children: node, offset: offset)
+            case "ELLIPSE":
+                return FVector(children: node, offset: offset)
             default:
                 fatalError()
             }

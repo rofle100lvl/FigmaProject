@@ -22,11 +22,22 @@ public struct PaintDTO: Decodable {
     public let type: String
 }
 
+public struct Size: Decodable {
+    let x: CGFloat
+    let y: CGFloat
+}
+
+public struct Geometry: Decodable {
+    let path: String
+}
+
 public struct ChildrenDTO: Decodable {
     public let id: String
     public let name: String
     public let type: String
     public let scrollBehavior: String
+    public let fillGeometry: [Geometry]?
+    public let strokeGeometry: [Geometry]?
     public let children: [ChildrenDTO]?
     public let absoluteBoundingBox: BoundingBoxDTO?
     public let fills: [PaintDTO]?
@@ -36,7 +47,7 @@ public struct ChildrenDTO: Decodable {
     public let strokeWeight: CGFloat?
     public let blendMode: String?
     public let opacity: CGFloat?
-    public let size: CGSize?
+    public let size: Size?
     public let clipsContent: Bool?
 }
 

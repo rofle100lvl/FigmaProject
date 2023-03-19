@@ -14,8 +14,12 @@ public class ViewModel: ObservableObject {
     public var store = Set<AnyCancellable>()
     
     public init() {
-        let url = URL(string: "https://api.figma.com/v1/files/zoc9T7J4TtX5u6UpQgO0Yi")
-        var request = URLRequest(url: url!)
+        var components = URLComponents(string: "https://api.figma.com/v1/files/zoc9T7J4TtX5u6UpQgO0Yi")
+        let parameters: [String: String] = ["geometry": "paths"]
+        components?.queryItems = parameters.map { (key, value) in
+            URLQueryItem(name: key, value: value)
+        }
+        var request = URLRequest(url: components!.url!)
         request.setValue("figd_y_ZoIwV59_-ZRTteSAt5xc6BgfzDgwKtZyqjsIQP", forHTTPHeaderField: "X-FIGMA-TOKEN")
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             let jsonDecoder = JSONDecoder()

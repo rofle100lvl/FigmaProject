@@ -8,7 +8,7 @@ class FFrame: FView {
     let blendMode: String
     var cornerRadius: CGFloat? = nil
     
-    required public init(children: ChildrenDTO, offset: CGPoint) {
+    required init(children: ChildrenDTO, offset: CGPoint) {
         if let fillsDTO = children.fills,
            let strokesDTO = children.strokes,
            let strokeWeightDTO = children.strokeWeight,

@@ -1,77 +1,77 @@
 import Foundation
 
-public struct BoundingBoxDTO: Decodable {
-    public let x: CGFloat
-    public let y: CGFloat
-    public let width: CGFloat
-    public let height: CGFloat
+struct BoundingBoxDTO: Decodable {
+    let x: CGFloat
+    let y: CGFloat
+    let width: CGFloat
+    let height: CGFloat
 }
 
-public struct ColorDTO: Decodable {
-    public let r: CGFloat
-    public let g: CGFloat
-    public let b: CGFloat
-    public let a: CGFloat
+struct ColorDTO: Decodable {
+    let r: CGFloat
+    let g: CGFloat
+    let b: CGFloat
+    let a: CGFloat
 }
 
-public struct PaintDTO: Decodable {
-    public let visible: Bool?
-    public let opacity: CGFloat?
-    public let color: ColorDTO?
-    public let blendMode: String
-    public let type: String
+ struct PaintDTO: Decodable {
+     let visible: Bool?
+     let opacity: CGFloat?
+     let color: ColorDTO?
+     let blendMode: String
+     let type: String
 }
 
-public struct ChildrenDTO: Decodable {
-    public let id: String
-    public let name: String
-    public let type: String
-    public let scrollBehavior: String
-    public let children: [ChildrenDTO]?
-    public let absoluteBoundingBox: BoundingBoxDTO?
-    public let fills: [PaintDTO]?
-    public let backgroundColor: ColorDTO?
-    public let cornerRadius: CGFloat?
-    public let strokes: [PaintDTO]?
-    public let strokeWeight: CGFloat?
-    public let blendMode: String?
-    public let opacity: CGFloat?
-    public let size: CGSize?
-    public let clipsContent: Bool?
+ struct ChildrenDTO: Decodable {
+     let id: String
+     let name: String
+     let type: String
+     let scrollBehavior: String
+     let children: [ChildrenDTO]?
+     let absoluteBoundingBox: BoundingBoxDTO?
+     let fills: [PaintDTO]?
+     let backgroundColor: ColorDTO?
+     let cornerRadius: CGFloat?
+     let strokes: [PaintDTO]?
+     let strokeWeight: CGFloat?
+     let blendMode: String?
+     let opacity: CGFloat?
+     let size: CGSize?
+     let clipsContent: Bool?
 }
 
-public struct ComponentDTO: Decodable {
-    public let id: String
-    public let type: String
-    public let scrollBehavior: String
-    public let key: String
-    public let name: String
-    public let description: String
-    public let remote: Bool
-    public let componentSetId: String
-    public let documentationLinks: [String]
+ struct ComponentDTO: Decodable {
+     let id: String
+     let type: String
+     let scrollBehavior: String
+     let key: String
+     let name: String
+     let description: String
+     let remote: Bool
+     let componentSetId: String
+     let documentationLinks: [String]
 }
 
-public struct ComponentSetDTO: Decodable {
-    public let key: String
-    public let name: String
-    public let description: String
-    public let remote: Bool
+ struct ComponentSetDTO: Decodable {
+     let key: String
+     let name: String
+     let description: String
+     let remote: Bool
 }
 
-public struct StyleDTO: Decodable {
-    public let key: String
-    public let name: String
-    public let styleType: String
-    public let remote: Bool
-    public let description: String
+ struct StyleDTO: Decodable {
+     let key: String
+     let name: String
+     let styleType: String
+     let remote: Bool
+     let description: String
 
 }
 
-public struct ResponseFDTO: Decodable {
-    public let document: ChildrenDTO
-    public let components: [String: ComponentDTO]
-    public let componentSets: [String: ComponentSetDTO]
-    public let schemaVersion: Int
-    public let styles: [String: StyleDTO]
+ struct FigmaResponseDTO: Decodable {
+     let document: ChildrenDTO
+     let components: [String: ComponentDTO]
+     let componentSets: [String: ComponentSetDTO]
+     let schemaVersion: Int
+     let styles: [String: StyleDTO]
 }

@@ -34,17 +34,17 @@ struct FColor {
 }
 
 enum FBlendMode {
-    case PassThrough
-    case Normal
-    case Darken
-    case Multiply
-    case LinearBurn
-    case ColorBurn
-    case Lighten
-    case Screen
-    case LinearDodge
-    case ColorDodge
-    case Overlay
-    case SoftLight
-    case HardLight
+    case passThrough
+    case normal
+    case darken
+    case multiply
+    case linearBurn
+    case colorBurn
+    case lighten
+    case screen
+    case linearDodge
+    case colorDodge
+    case overlay
+    case softLight
+    case hardLight
 }

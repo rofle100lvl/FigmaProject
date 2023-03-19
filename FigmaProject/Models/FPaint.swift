@@ -18,10 +18,10 @@ class FSolid: FPaint {
 
 class FGradient: FPaint {
     enum GradientType {
-        case Linear
-        case Radial
-        case Angular
-        case Diamand
+        case linear
+        case radial
+        case angular
+        case diamand
     }
     
     struct ColorStop {
@@ -49,14 +49,14 @@ class FPaint: PaintDTOAble {
     }
     
     enum FPaintType: String {
-        case Solid = "SOLID"
-        case GradiendLinear = "GRADIENT_LINEAR"
-        case GradiendRadial = "GRADIENT_RADIAL"
-        case GradiendAngular = "GRADIENT_ANGULAR"
-        case GradiendDiamand = "GRADIENT_DIAMOND"
-        case Image = "IMAGE"
-        case Emoji = "EMOJI"
-        case Video = "VIDEO"
+        case solid = "SOLID"
+        case gradiendLinear = "GRADIENT_LINEAR"
+        case gradiendRadial = "GRADIENT_RADIAL"
+        case gradiendAngular = "GRADIENT_ANGULAR"
+        case gradiendDiamand = "GRADIENT_DIAMOND"
+        case image = "IMAGE"
+        case emoji = "EMOJI"
+        case video = "VIDEO"
     }
     let visible: Bool
     let opacity: CGFloat
@@ -64,9 +64,9 @@ class FPaint: PaintDTOAble {
     static func initPaint(paint: PaintDTO) -> FPaint {
         if let type = FPaintType(rawValue: paint.type) {
             switch type {
-            case .Solid:
+            case .solid:
                 return FSolid(paint: paint)
-            case .GradiendLinear, .GradiendAngular, .GradiendDiamand, .GradiendRadial:
+            case .gradiendLinear, .gradiendAngular, .gradiendDiamand, .gradiendRadial:
                 return FGradient(paint: paint)
             default:
                 return FPaint(paint: paint)

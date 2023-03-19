@@ -7,8 +7,7 @@
 
 import Foundation
 
-class FRectangle: FVector {
-    
+final class FRectangle: FVector {
     required init(children: ChildrenDTO, offset: CGPoint) {
         super.init(children: children, offset: offset)
     }

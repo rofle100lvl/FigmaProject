@@ -6,12 +6,9 @@
 //
 
 import SwiftUI
-import Combine
 
-public class ViewModel: ObservableObject {
-    @Published public var response: ResponseFDTO? = nil
-    @Published public var child: FView?
-    public var store = Set<AnyCancellable>()
+final class ViewModel: ObservableObject {
+    @Published var child: FView?
     
     public init() {
         let url = URL(string: "https://api.figma.com/v1/files/zoc9T7J4TtX5u6UpQgO0Yi")
@@ -19,10 +16,11 @@ public class ViewModel: ObservableObject {
         request.setValue("figd_y_ZoIwV59_-ZRTteSAt5xc6BgfzDgwKtZyqjsIQP", forHTTPHeaderField: "X-FIGMA-TOKEN")
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             let jsonDecoder = JSONDecoder()
-            let responseModel = try! jsonDecoder.decode(ResponseFDTO.self, from: data!)
-            self.response = responseModel
-            let document = FDocument(children: self.response!.document)
-            self.child = document
+            let responseModel = try! jsonDecoder.decode(FigmaResponseDTO.self, from: data!)
+            let document = FDocument(children: responseModel.document)
+            DispatchQueue.main.async {
+                self.child = document
+            }
         }
         task.resume()
     }
@@ -34,15 +32,14 @@ public class ViewModel: ObservableObject {
     }
 }
 
-struct MMM: UIViewRepresentable {
+struct FigmaRepresentedView: UIViewRepresentable {
     let child: FView
     
     func makeUIView(context: Context) -> UIView {
         child.build()
     }
 
-    func updateUIView(_ uiView: UIView, context: Context) {
-    }
+    func updateUIView(_ uiView: UIView, context: Context) { }
 }
 
 struct ContentView: View {
@@ -50,10 +47,7 @@ struct ContentView: View {
     
     var body: some View {
         if let child = vm.child {
-            MMM(child: child)
-                .onAppear {
-                    vm.build(children: child)
-                }
+            FigmaRepresentedView(child: child)
         }
     }
 }

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		679D3CDF29C4B55A00EDEFE7 /* FDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D3CDE29C4B55A00EDEFE7 /* FDocument.swift */; };
 		679D3CE129C4B57500EDEFE7 /* FCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D3CE029C4B57500EDEFE7 /* FCanvas.swift */; };
 		679D3CE329C4B58300EDEFE7 /* FFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D3CE229C4B58300EDEFE7 /* FFrame.swift */; };
 		679D3CE529C4B5BE00EDEFE7 /* FPaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D3CE429C4B5BE00EDEFE7 /* FPaint.swift */; };
 		679D3CE729C4B5FA00EDEFE7 /* FStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D3CE629C4B5FA00EDEFE7 /* FStuff.swift */; };
 		679D3CE929C4B61A00EDEFE7 /* FRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D3CE829C4B61A00EDEFE7 /* FRectangle.swift */; };
 		679D3CEB29C4B64400EDEFE7 /* FVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D3CEA29C4B64400EDEFE7 /* FVector.swift */; };
+		67AF28B329C7229E00745562 /* FDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AF28B229C7229E00745562 /* FDocument.swift */; };
 		67B859FA29C0B39D004F8836 /* FigmaProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B859F929C0B39D004F8836 /* FigmaProjectApp.swift */; };
 		67B859FC29C0B39D004F8836 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B859FB29C0B39D004F8836 /* ContentView.swift */; };
 		67B859FE29C0B39E004F8836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67B859FD29C0B39E004F8836 /* Assets.xcassets */; };
@@ -44,13 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		679D3CDE29C4B55A00EDEFE7 /* FDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FDocument.swift; path = ../../../../Documents/FDocument.swift; sourceTree = "<group>"; };
 		679D3CE029C4B57500EDEFE7 /* FCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCanvas.swift; sourceTree = "<group>"; };
 		679D3CE229C4B58300EDEFE7 /* FFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFrame.swift; sourceTree = "<group>"; };
 		679D3CE429C4B5BE00EDEFE7 /* FPaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPaint.swift; sourceTree = "<group>"; };
 		679D3CE629C4B5FA00EDEFE7 /* FStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FStuff.swift; sourceTree = "<group>"; };
 		679D3CE829C4B61A00EDEFE7 /* FRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRectangle.swift; sourceTree = "<group>"; };
 		679D3CEA29C4B64400EDEFE7 /* FVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FVector.swift; sourceTree = "<group>"; };
+		67AF28B229C7229E00745562 /* FDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDocument.swift; sourceTree = "<group>"; };
 		67B859F629C0B39D004F8836 /* FigmaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FigmaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67B859F929C0B39D004F8836 /* FigmaProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaProjectApp.swift; sourceTree = "<group>"; };
 		67B859FB29C0B39D004F8836 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				67C4764129C253D900F498FA /* FView.swift */,
-				679D3CDE29C4B55A00EDEFE7 /* FDocument.swift */,
+				67AF28B229C7229E00745562 /* FDocument.swift */,
 				679D3CE029C4B57500EDEFE7 /* FCanvas.swift */,
 				679D3CE229C4B58300EDEFE7 /* FFrame.swift */,
 				679D3CE429C4B5BE00EDEFE7 /* FPaint.swift */,
@@ -317,10 +317,10 @@
 				679D3CE929C4B61A00EDEFE7 /* FRectangle.swift in Sources */,
 				67B859FC29C0B39D004F8836 /* ContentView.swift in Sources */,
 				679D3CE729C4B5FA00EDEFE7 /* FStuff.swift in Sources */,
+				67AF28B329C7229E00745562 /* FDocument.swift in Sources */,
 				679D3CEB29C4B64400EDEFE7 /* FVector.swift in Sources */,
 				679D3CE329C4B58300EDEFE7 /* FFrame.swift in Sources */,
 				67B85A2529C0CEC2004F8836 /* Response.swift in Sources */,
-				679D3CDF29C4B55A00EDEFE7 /* FDocument.swift in Sources */,
 				67B859FA29C0B39D004F8836 /* FigmaProjectApp.swift in Sources */,
 				67C4764229C253D900F498FA /* FView.swift in Sources */,
 			);

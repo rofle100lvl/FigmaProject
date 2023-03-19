@@ -8,7 +8,7 @@ class FFrame: FView {
     let blendMode: String
     var cornerRadius: CGFloat? = nil
     
-    required public init(children: ChildrenDTO, offset: CGPoint) {
+    required init(children: ChildrenDTO, offset: CGPoint) {
         if let fillsDTO = children.fills,
            let strokesDTO = children.strokes,
            let strokeWeightDTO = children.strokeWeight,
@@ -26,7 +26,7 @@ class FFrame: FView {
         super.init(children: children, offset: offset)
     }
     
-    override func build() -> UIView {
+    override func build() -> FUIView {
         let view = super.build()
         if fills.count > 0,
            let solid = self.fills[0] as? FSolid {

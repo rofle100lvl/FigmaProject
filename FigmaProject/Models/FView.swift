@@ -12,20 +12,20 @@ protocol ChildrenDTOAble {
     init(children: ChildrenDTO, offset: CGPoint)
 }
 
-public class FView: ChildrenDTOAble {
+class FView: ChildrenDTOAble {
     let id: String
     let name: String
     let scrollBehavior: String
     var frame: CGRect = .null 
     var subviews: [FView] = []
     
-    required public init(children: ChildrenDTO, offset: CGPoint = .init(x: 0, y: 0)) {
+    required init(children: ChildrenDTO, offset: CGPoint = .init(x: 0, y: 0)) {
         self.id = children.id
         self.name = children.name
         self.scrollBehavior = children.scrollBehavior
         if let absolutePostition = children.absoluteBoundingBox {
-            var absoluteX = absolutePostition.x - offset.x
-            var absoluteY = absolutePostition.y - offset.y
+            let absoluteX = absolutePostition.x - offset.x
+            let absoluteY = absolutePostition.y - offset.y
             self.frame = CGRect(x: absoluteX, y: absoluteY, width: absolutePostition.width, height: absolutePostition.height)
         }
         else {
@@ -60,8 +60,8 @@ public class FView: ChildrenDTOAble {
         }
     }
     
-    public func build() -> UIView {
-        let view = UIView()
+    func build() -> FUIView {
+        let view = FUIView()
         view.frame = frame
         subviews.forEach { fView in
             view.addSubview(fView.build())

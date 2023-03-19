@@ -20,7 +20,7 @@ class FCanvas: FDocument {
         super.init(children: children, offset: offset)
     }
     
-    override func build() -> UIView {
+    override func build() -> FUIView {
         let view = super.build()
         view.backgroundColor = backgroundColor.uiColor()
         return view

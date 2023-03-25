@@ -31,6 +31,16 @@ struct Geometry: Decodable {
     let path: String
 }
 
+struct TypeStyle: Decodable {
+    let fontFamily: String
+    let fontWeight: CGFloat
+    let fontSize: CGFloat
+    let letterSpacing: CGFloat
+    let lineHeightPx: CGFloat
+    let lineHeightPercent: CGFloat
+}
+
+
 struct ChildrenDTO: Decodable {
     let id: String
     let name: String
@@ -47,8 +57,12 @@ struct ChildrenDTO: Decodable {
     let strokeWeight: CGFloat?
     let blendMode: String?
     let opacity: CGFloat?
-    let size: Size?
+    let visible: Bool?
     let clipsContent: Bool?
+    let relativeTransform: [[CGFloat]]?
+    let rotation: CGFloat?
+    let characters: String?
+    let style: TypeStyle?
 }
 
  struct ComponentDTO: Decodable {
@@ -81,8 +95,8 @@ struct ChildrenDTO: Decodable {
 
  struct FigmaResponseDTO: Decodable {
      let document: ChildrenDTO
-     let components: [String: ComponentDTO]
-     let componentSets: [String: ComponentSetDTO]
+//     let components: [String: ComponentDTO]
+//     let componentSets: [String: ComponentSetDTO]
      let schemaVersion: Int
      let styles: [String: StyleDTO]
 }

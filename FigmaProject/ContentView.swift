@@ -12,7 +12,7 @@ final class ViewModel: ObservableObject {
     
     public init() {
         var components = URLComponents(string: "https://api.figma.com/v1/files/zoc9T7J4TtX5u6UpQgO0Yi")
-        let parameters: [String: String] = ["geometry": "paths", "ids": "57:5"]
+        let parameters: [String: String] = ["geometry": "paths"]
         components?.queryItems = parameters.map { (key, value) in
             URLQueryItem(name: key, value: value)
         }
@@ -40,7 +40,7 @@ struct FigmaRepresentedView: UIViewRepresentable {
     let child: FView
     
     func makeUIView(context: Context) -> UIView {
-        child.build()
+        child.subviews[0].build()
     }
 
     func updateUIView(_ uiView: UIView, context: Context) { }

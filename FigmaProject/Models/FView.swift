@@ -16,7 +16,8 @@ class FView: ChildrenDTOAble {
     let id: String
     let name: String
     let scrollBehavior: String
-    var frame: CGRect = .null 
+    var visible: Bool? = nil
+    var frame: CGRect = .null
     var subviews: [FView] = []
     
     required init(children: ChildrenDTO, offset: CGPoint = .init(x: 0, y: 0)) {
@@ -32,6 +33,9 @@ class FView: ChildrenDTOAble {
             self.frame = .init(x: 0, y: 0, width: 0, height: 0)
         }
         let newOffset = CGPoint(x: frame.minX + offset.x , y: frame.minY + offset.y)
+        if let visible = children.visible {
+            self.visible = visible
+        }
         if let nodes = children.children {
             self.subviews = initNext(nodes: nodes, offset: newOffset)
         }
@@ -49,11 +53,27 @@ class FView: ChildrenDTOAble {
             case "VECTOR":
                 return FVector(children: node, offset: offset)
             case "TEXT":
-                return FFrame(children: node, offset: offset)
+                return FText(children: node, offset: offset)
             case "LINE":
                 return FVector(children: node, offset: offset)
             case "ELLIPSE":
                 return FVector(children: node, offset: offset)
+            case "REGULAR_POLYGON":
+                return FVector(children: node, offset: offset)
+            case "STAR":
+                return FVector(children: node, offset: offset)
+            case "GROUP":
+                return FView(children: node, offset: offset)
+            case "SECTION":
+                return FFrame(children: node, offset: offset)
+            case "COMPONENT_SET":
+                return FFrame(children: node, offset: offset)
+            case "COMPONENT":
+                return FFrame(children: node, offset: offset)
+            case "INSTANCE":
+                return FFrame(children: node, offset: offset)
+            case "BOOLEAN_OPERATION":
+                return FFrame(children: node, offset: offset)
             default:
                 fatalError()
             }
@@ -65,6 +85,9 @@ class FView: ChildrenDTOAble {
         view.frame = frame
         subviews.forEach { fView in
             view.addSubview(fView.build())
+        }
+        if let visible = self.visible {
+            view.isHidden = !visible
         }
         return view
     }

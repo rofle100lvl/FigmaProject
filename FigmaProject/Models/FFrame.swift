@@ -2,23 +2,12 @@ import Foundation
 import UIKit
 
 class FFrame: FView {
-    let fills: [FPaint]
-    let strokes: [FPaint]
-    let strokeWeight: CGFloat
-    let blendMode: String
-    var cornerRadius: CGFloat? = nil
+    private var fills: [FPaint] = []
+    private var cornerRadius: CGFloat? = nil
     
     required init(children: ChildrenDTO, offset: CGPoint) {
-        if let fillsDTO = children.fills,
-           let strokesDTO = children.strokes,
-           let strokeWeightDTO = children.strokeWeight,
-           let blendModeDTO = children.blendMode {
+        if let fillsDTO = children.fills {
             self.fills = fillsDTO.map { FPaint.initPaint(paint: $0) }
-            self.strokes = strokesDTO.map { FPaint.initPaint(paint: $0) }
-            self.strokeWeight = strokeWeightDTO
-            self.blendMode = blendModeDTO
-        } else {
-            fatalError()
         }
         if let cornerRadius = children.cornerRadius {
             self.cornerRadius = cornerRadius

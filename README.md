@@ -1,4 +1,3 @@
-[![MIT License](https://img.shields.io/github/license/<username>/<reponame>.svg)](https://github.com/<username>/<reponame>/blob/master/LICENSE)
 [![Figma API](https://img.shields.io/badge/Figma%20API-v1-green)](https://www.figma.com/developers/api)
 [![iOS](https://img.shields.io/badge/iOS-14.0-blue)](https://developer.apple.com/ios/)
 [![Swift](https://img.shields.io/badge/Swift-5.3-orange)](https://swift.org/)

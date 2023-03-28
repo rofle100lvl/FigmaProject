@@ -30,11 +30,3 @@ Once you have the app running, you can use it to create vectors, frames, and sim
 1. Support any text
 2. Support any Photos
 3. Support drag and move
-
-## Contributing
-
-If you'd like to contribute to FigmaProject, feel free to submit a pull request with your changes. We welcome all contributions and appreciate your help in making this project better!
-
-## License
-
-FigmaProject is licensed under the MIT License. See `LICENSE` for more information.

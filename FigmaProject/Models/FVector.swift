@@ -18,8 +18,7 @@ class FVector: FView {
     var fills: [FPaint] = []
     var strokes: [FPaint] = []
     var strokeWeight: CGFloat? = nil
-    var rotationAngle: CGFloat? = nil
-    var relativeTransform: [[CGFloat]]? = nil
+
     
     var drawModel: DrawModel {
         var drawModel = DrawModel()
@@ -57,20 +56,12 @@ class FVector: FView {
         if let weight = children.strokeWeight {
             self.strokeWeight = weight
         }
-        if let rotationAngle = children.rotation {
-            self.rotationAngle = rotationAngle
-        }
-        if let relativeTransform = children.relativeTransform {
-            self.relativeTransform = relativeTransform
-        }
     }
     
     override func build() -> FUIView {
         let view = super.build()
         view.commands = self.drawing
         view.drawModel = self.drawModel
-        view.rotationAngle = self.rotationAngle
-        view.relative = self.relativeTransform
         return view
     }
 }

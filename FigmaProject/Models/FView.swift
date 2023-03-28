@@ -19,6 +19,8 @@ class FView: ChildrenDTOAble {
     var visible: Bool? = nil
     var frame: CGRect = .null
     var subviews: [FView] = []
+    var rotationAngle: CGFloat? = nil
+    var relativeTransform: [[CGFloat]]? = nil
     
     required init(children: ChildrenDTO, offset: CGPoint = .init(x: 0, y: 0)) {
         self.id = children.id
@@ -31,6 +33,12 @@ class FView: ChildrenDTOAble {
         }
         else {
             self.frame = .init(x: 0, y: 0, width: 0, height: 0)
+        }
+        if let rotationAngle = children.rotation {
+            self.rotationAngle = rotationAngle
+        }
+        if let relativeTransform = children.relativeTransform {
+            self.relativeTransform = relativeTransform
         }
         let newOffset = CGPoint(x: frame.minX + offset.x , y: frame.minY + offset.y)
         if let visible = children.visible {
@@ -63,7 +71,7 @@ class FView: ChildrenDTOAble {
             case "STAR":
                 return FVector(children: node, offset: offset)
             case "GROUP":
-                return FView(children: node, offset: offset)
+                return FGroup(children: node, offset: offset)
             case "SECTION":
                 return FFrame(children: node, offset: offset)
             case "COMPONENT_SET":
@@ -89,6 +97,8 @@ class FView: ChildrenDTOAble {
         if let visible = self.visible {
             view.isHidden = !visible
         }
+//        view.rotationAngle = self.rotationAngle
+//        view.relative = self.relativeTransform
         return view
     }
 }

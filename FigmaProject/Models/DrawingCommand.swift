@@ -13,7 +13,7 @@ enum DrawingCommand {
     case line(CGPoint)
     case close
     
-    static func prepareString(str: String) -> String {
+    private static func prepareString(str: String) -> String {
         var array = Array(str)
         var i = 1
         while i < array.count {

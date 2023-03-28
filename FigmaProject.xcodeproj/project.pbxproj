@@ -18,6 +18,7 @@
 		67AF28B729C7395B00745562 /* DrawingCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AF28B629C7395B00745562 /* DrawingCommand.swift */; };
 		67AF28BB29CDE18C00745562 /* FText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AF28BA29CDE18C00745562 /* FText.swift */; };
 		67AF28BF29CDFD8100745562 /* CenteredTextLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AF28BE29CDFD8100745562 /* CenteredTextLayer.swift */; };
+		67AF28C329CF7E6C00745562 /* FGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AF28C229CF7E6C00745562 /* FGroup.swift */; };
 		67B859FA29C0B39D004F8836 /* FigmaProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B859F929C0B39D004F8836 /* FigmaProjectApp.swift */; };
 		67B859FC29C0B39D004F8836 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B859FB29C0B39D004F8836 /* ContentView.swift */; };
 		67B859FE29C0B39E004F8836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67B859FD29C0B39E004F8836 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		67AF28B629C7395B00745562 /* DrawingCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCommand.swift; sourceTree = "<group>"; };
 		67AF28BA29CDE18C00745562 /* FText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FText.swift; sourceTree = "<group>"; };
 		67AF28BE29CDFD8100745562 /* CenteredTextLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredTextLayer.swift; sourceTree = "<group>"; };
+		67AF28C229CF7E6C00745562 /* FGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FGroup.swift; sourceTree = "<group>"; };
 		67B859F629C0B39D004F8836 /* FigmaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FigmaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67B859F929C0B39D004F8836 /* FigmaProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaProjectApp.swift; sourceTree = "<group>"; };
 		67B859FB29C0B39D004F8836 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				67AF28B629C7395B00745562 /* DrawingCommand.swift */,
 				67AF28BA29CDE18C00745562 /* FText.swift */,
 				67AF28BE29CDFD8100745562 /* CenteredTextLayer.swift */,
+				67AF28C229CF7E6C00745562 /* FGroup.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				67AF28B329C7229E00745562 /* FDocument.swift in Sources */,
 				679D3CEB29C4B64400EDEFE7 /* FVector.swift in Sources */,
 				67AF28BB29CDE18C00745562 /* FText.swift in Sources */,
+				67AF28C329CF7E6C00745562 /* FGroup.swift in Sources */,
 				679D3CE329C4B58300EDEFE7 /* FFrame.swift in Sources */,
 				67AF28BF29CDFD8100745562 /* CenteredTextLayer.swift in Sources */,
 				67B85A2529C0CEC2004F8836 /* Response.swift in Sources */,

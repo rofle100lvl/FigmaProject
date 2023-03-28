@@ -28,6 +28,8 @@ class FUIView: UIView {
         if !self.commands.isEmpty,
            let drawModel = self.drawModel {
             drawR(drawModel: drawModel)
+        } else if let relative = self.relative {
+            self.transform = CGAffineTransform(a: relative[0][0], b: relative[1][0], c: relative[0][1], d: relative[1][1], tx: 0, ty: 0)
         }
         if self.text != nil {
             type()

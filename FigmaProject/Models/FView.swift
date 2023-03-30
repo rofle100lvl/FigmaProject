@@ -21,6 +21,7 @@ class FView: ChildrenDTOAble {
     var subviews: [FView] = []
     var rotationAngle: CGFloat? = nil
     var relativeTransform: [[CGFloat]]? = nil
+    weak var parent: FView? = nil
     
     required init(children: ChildrenDTO, offset: CGPoint = .init(x: 0, y: 0)) {
         self.id = children.id
@@ -51,40 +52,43 @@ class FView: ChildrenDTOAble {
     
     private func initNext(nodes: [ChildrenDTO], offset: CGPoint) -> [FView] {
         nodes.map { node in
+            let view: FView
             switch node.type {
             case "CANVAS":
-                return FCanvas(children: node, offset: offset)
+                view = FCanvas(children: node, offset: offset)
             case "FRAME":
-                return FFrame(children: node, offset: offset)
+                view = FFrame(children: node, offset: offset)
             case "RECTANGLE":
-                return FVector(children: node, offset: offset)
+                view = FVector(children: node, offset: offset)
             case "VECTOR":
-                return FVector(children: node, offset: offset)
+                view = FVector(children: node, offset: offset)
             case "TEXT":
-                return FText(children: node, offset: offset)
+                view = FText(children: node, offset: offset)
             case "LINE":
-                return FVector(children: node, offset: offset)
+                view = FVector(children: node, offset: offset)
             case "ELLIPSE":
-                return FVector(children: node, offset: offset)
+                view = FVector(children: node, offset: offset)
             case "REGULAR_POLYGON":
-                return FVector(children: node, offset: offset)
+                view = FVector(children: node, offset: offset)
             case "STAR":
-                return FVector(children: node, offset: offset)
+                view = FVector(children: node, offset: offset)
             case "GROUP":
-                return FGroup(children: node, offset: offset)
+                view = FGroup(children: node, offset: offset)
             case "SECTION":
-                return FFrame(children: node, offset: offset)
+                view = FFrame(children: node, offset: offset)
             case "COMPONENT_SET":
-                return FFrame(children: node, offset: offset)
+                view = FFrame(children: node, offset: offset)
             case "COMPONENT":
-                return FFrame(children: node, offset: offset)
+                view = FFrame(children: node, offset: offset)
             case "INSTANCE":
-                return FFrame(children: node, offset: offset)
+                view = FFrame(children: node, offset: offset)
             case "BOOLEAN_OPERATION":
-                return FFrame(children: node, offset: offset)
+                view = FFrame(children: node, offset: offset)
             default:
                 fatalError()
             }
+            view.parent = self
+            return view
         }
     }
     
@@ -97,8 +101,10 @@ class FView: ChildrenDTOAble {
         if let visible = self.visible {
             view.isHidden = !visible
         }
-//        view.rotationAngle = self.rotationAngle
-//        view.relative = self.relativeTransform
+        if let rotationAngle = rotationAngle,
+           let relativeTransform {
+            view.rotate = .init(rotationAngle: rotationAngle, relative: relativeTransform)
+        }
         return view
     }
 }

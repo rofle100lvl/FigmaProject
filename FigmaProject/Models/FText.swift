@@ -35,12 +35,7 @@ class FText: FVector {
     
     override func build() -> FUIView {
         let view = super.build()
-        view.text = text
-        view.font = font
-        view.lineHeightPercent = lineHeightPx
-        view.lineHeightPx = lineHeightPx
-        view.fontWeight = fontWeight
-        view.fontSize = fontSize
+        view.content = .text(Text(text: text, font: font, fontWeight: fontWeight, fontSize: fontSize, letterSpacing: letterSpacing, lineHeightPx: lineHeightPx, lineHeightPercent: lineHeightPercent))
         return view
     }
 }

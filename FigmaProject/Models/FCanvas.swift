@@ -23,6 +23,6 @@ class FCanvas: FDocument {
     override func build() -> FUIView {
         let view = super.build()
         view.backgroundColor = backgroundColor.uiColor()
-        return view
+        return view.subviews.first! as! FUIView
     }
 }

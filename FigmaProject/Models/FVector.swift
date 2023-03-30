@@ -18,7 +18,6 @@ class FVector: FView {
     var fills: [FPaint] = []
     var strokes: [FPaint] = []
     var strokeWeight: CGFloat? = nil
-
     
     var drawModel: DrawModel {
         var drawModel = DrawModel()
@@ -60,8 +59,7 @@ class FVector: FView {
     
     override func build() -> FUIView {
         let view = super.build()
-        view.commands = self.drawing
-        view.drawModel = self.drawModel
+        view.content = .drawing(.init(commands: self.drawing, drawModel: self.drawModel))
         return view
     }
 }

@@ -56,6 +56,7 @@ struct ChildrenDTO: Decodable {
     let strokes: [PaintDTO]?
     let strokeWeight: CGFloat?
     let blendMode: String?
+    let size: Size?
     let opacity: CGFloat?
     let visible: Bool?
     let clipsContent: Bool?

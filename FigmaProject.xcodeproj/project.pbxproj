@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C449FD729D3438200541323 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C449FD629D3438200541323 /* Drawing.swift */; };
 		679D3CE129C4B57500EDEFE7 /* FCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D3CE029C4B57500EDEFE7 /* FCanvas.swift */; };
 		679D3CE329C4B58300EDEFE7 /* FFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D3CE229C4B58300EDEFE7 /* FFrame.swift */; };
 		679D3CE529C4B5BE00EDEFE7 /* FPaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D3CE429C4B5BE00EDEFE7 /* FPaint.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C449FD629D3438200541323 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		679D3CE029C4B57500EDEFE7 /* FCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCanvas.swift; sourceTree = "<group>"; };
 		679D3CE229C4B58300EDEFE7 /* FFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFrame.swift; sourceTree = "<group>"; };
 		679D3CE429C4B5BE00EDEFE7 /* FPaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPaint.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				67AF28BA29CDE18C00745562 /* FText.swift */,
 				67AF28BE29CDFD8100745562 /* CenteredTextLayer.swift */,
 				67AF28C229CF7E6C00745562 /* FGroup.swift */,
+				5C449FD629D3438200541323 /* Drawing.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				679D3CE129C4B57500EDEFE7 /* FCanvas.swift in Sources */,
+				5C449FD729D3438200541323 /* Drawing.swift in Sources */,
 				679D3CE529C4B5BE00EDEFE7 /* FPaint.swift in Sources */,
 				679D3CE929C4B61A00EDEFE7 /* FRectangle.swift in Sources */,
 				67AF28B529C732DE00745562 /* FUIVIew.swift in Sources */,

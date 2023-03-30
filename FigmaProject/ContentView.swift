@@ -36,14 +36,19 @@ final class ViewModel: ObservableObject {
     }
 }
 
-struct FigmaRepresentedView: UIViewRepresentable {
+struct FigmaRepresentedView: UIViewControllerRepresentable {
     let child: FView
     
-    func makeUIView(context: Context) -> UIView {
-        child.subviews[0].build()
+    func makeUIViewController(context: Context) -> some UIViewController {
+        let view = child.build()
+        let controller = ZViewController()
+        controller.contentView = view
+        return controller
     }
-
-    func updateUIView(_ uiView: UIView, context: Context) { }
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        
+    }
 }
 
 struct ContentView: View {

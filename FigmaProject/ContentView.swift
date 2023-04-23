@@ -11,8 +11,12 @@ final class ViewModel: ObservableObject {
     @Published var child: FView?
     
     public init() {
-        let url = URL(string: "https://api.figma.com/v1/files/zoc9T7J4TtX5u6UpQgO0Yi")
-        var request = URLRequest(url: url!)
+        var components = URLComponents(string: "https://api.figma.com/v1/files/zoc9T7J4TtX5u6UpQgO0Yi")
+        let parameters: [String: String] = ["geometry": "paths"]
+        components?.queryItems = parameters.map { (key, value) in
+            URLQueryItem(name: key, value: value)
+        }
+        var request = URLRequest(url: components!.url!)
         request.setValue("figd_y_ZoIwV59_-ZRTteSAt5xc6BgfzDgwKtZyqjsIQP", forHTTPHeaderField: "X-FIGMA-TOKEN")
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             let jsonDecoder = JSONDecoder()
@@ -32,14 +36,19 @@ final class ViewModel: ObservableObject {
     }
 }
 
-struct FigmaRepresentedView: UIViewRepresentable {
+struct FigmaRepresentedView: UIViewControllerRepresentable {
     let child: FView
     
-    func makeUIView(context: Context) -> UIView {
-        child.build()
+    func makeUIViewController(context: Context) -> some UIViewController {
+        let view = child.build()
+        let controller = ZViewController()
+        controller.contentView = view
+        return controller
     }
-
-    func updateUIView(_ uiView: UIView, context: Context) { }
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        
+    }
 }
 
 struct ContentView: View {

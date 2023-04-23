@@ -22,22 +22,47 @@ struct ColorDTO: Decodable {
      let type: String
 }
 
- struct ChildrenDTO: Decodable {
-     let id: String
-     let name: String
-     let type: String
-     let scrollBehavior: String
-     let children: [ChildrenDTO]?
-     let absoluteBoundingBox: BoundingBoxDTO?
-     let fills: [PaintDTO]?
-     let backgroundColor: ColorDTO?
-     let cornerRadius: CGFloat?
-     let strokes: [PaintDTO]?
-     let strokeWeight: CGFloat?
-     let blendMode: String?
-     let opacity: CGFloat?
-     let size: CGSize?
-     let clipsContent: Bool?
+struct Size: Decodable {
+    let x: CGFloat
+    let y: CGFloat
+}
+
+struct Geometry: Decodable {
+    let path: String
+}
+
+struct TypeStyle: Decodable {
+    let fontFamily: String
+    let fontWeight: CGFloat
+    let fontSize: CGFloat
+    let letterSpacing: CGFloat
+    let lineHeightPx: CGFloat
+    let lineHeightPercent: CGFloat
+}
+
+
+struct ChildrenDTO: Decodable {
+    let id: String
+    let name: String
+    let type: String
+    let scrollBehavior: String
+    let fillGeometry: [Geometry]?
+    let strokeGeometry: [Geometry]?
+    let children: [ChildrenDTO]?
+    let absoluteBoundingBox: BoundingBoxDTO?
+    let fills: [PaintDTO]?
+    let backgroundColor: ColorDTO?
+    let cornerRadius: CGFloat?
+    let strokes: [PaintDTO]?
+    let strokeWeight: CGFloat?
+    let blendMode: String?
+    let opacity: CGFloat?
+    let visible: Bool?
+    let clipsContent: Bool?
+    let relativeTransform: [[CGFloat]]?
+    let rotation: CGFloat?
+    let characters: String?
+    let style: TypeStyle?
 }
 
  struct ComponentDTO: Decodable {
@@ -70,8 +95,8 @@ struct ColorDTO: Decodable {
 
  struct FigmaResponseDTO: Decodable {
      let document: ChildrenDTO
-     let components: [String: ComponentDTO]
-     let componentSets: [String: ComponentSetDTO]
+//     let components: [String: ComponentDTO]
+//     let componentSets: [String: ComponentSetDTO]
      let schemaVersion: Int
      let styles: [String: StyleDTO]
 }

@@ -27,6 +27,7 @@ Once you have the app running, you can use it to create vectors, frames, and sim
 
 ## Future Implementation
 
-1. Support any text
-2. Support any Photos
-3. Support drag and move
+1. Supprot Groups
+2. Support any text
+3. Support any Photos
+4. Support drag and move

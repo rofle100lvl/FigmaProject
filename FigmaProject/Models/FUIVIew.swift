@@ -14,7 +14,11 @@ class FUIView: UIView {
     var commands: [DrawingCommand] = []
     var drawModel: DrawModel? = nil
     var rotationAngle: CGFloat?
-    var relative: [[CGFloat]]? = nil
+    var relative: [[CGFloat]]? = nil {
+        didSet {
+            print(relative)
+        }
+    }
     var text: String?
     var font: String?
     var fontWeight: CGFloat?
@@ -27,14 +31,19 @@ class FUIView: UIView {
         super.layoutSubviews()
         if !self.commands.isEmpty,
            let drawModel = self.drawModel {
-            drawR(drawModel: drawModel)
+            draw(drawModel: drawModel)
+            return
         }
         if self.text != nil {
             type()
         }
+        if let relative {
+            self.layer.setAffineTransform(CGAffineTransform(a: relative[0][0], b: relative[1][0], c: relative[0][1], d: relative[1][1], tx: 0, ty: 0))
+            self.frame.origin = .init(x: relative[0][2], y: relative[1][2])
+        }
     }
     
-    func drawR(scale: CGFloat = UIScreen.main.scale, drawModel: DrawModel) {
+    func draw(scale: CGFloat = UIScreen.main.scale, drawModel: DrawModel) {
         let shapeLayer = CAShapeLayer()
         if let stroke = drawModel.strokeColor {
             shapeLayer.lineWidth = stroke.1 * scale
@@ -74,7 +83,7 @@ class FUIView: UIView {
         let layer = CenterTextLayer()
         layer.string = self.text
         
-        layer.contentsScale = UIScreen.main.scale;
+        layer.contentsScale = UIScreen.main.scale
         if var fontName = font,
            let fontSize = fontSize {
             if !UIFont.familyNames.contains(where: { $0 == fontName }) {

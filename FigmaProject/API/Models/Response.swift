@@ -40,7 +40,6 @@ struct TypeStyle: Decodable {
     let lineHeightPercent: CGFloat
 }
 
-
 struct ChildrenDTO: Decodable {
     let id: String
     let name: String
@@ -95,8 +94,6 @@ struct ChildrenDTO: Decodable {
 
  struct FigmaResponseDTO: Decodable {
      let document: ChildrenDTO
-//     let components: [String: ComponentDTO]
-//     let componentSets: [String: ComponentSetDTO]
      let schemaVersion: Int
      let styles: [String: StyleDTO]
 }

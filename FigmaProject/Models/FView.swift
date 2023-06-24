@@ -63,7 +63,7 @@ class FView: ChildrenDTOAble {
             case "STAR":
                 return FVector(children: node, offset: offset)
             case "GROUP":
-                return FView(children: node, offset: offset)
+                return FVector(children: node, offset: offset)
             case "SECTION":
                 return FFrame(children: node, offset: offset)
             case "COMPONENT_SET":
